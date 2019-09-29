@@ -59,11 +59,16 @@ function setup() {
 
 function draw() {
   background(180);
-  
+  if(2%100==0){
+   
+  }
+ 
+ 
   if(gameState===PLAY){
    score = score + Math.round(getFrameRate()/60);
    if (keyDown("space")&& trex.y >= 159){
-     trex.velocityY= -12;
+    jumpsound.play(); 
+    trex.velocityY= -12;
   } 
    trex.velocityY = trex.velocityY+0.7;
   if(ground.x <0){
@@ -93,9 +98,7 @@ function draw() {
     //set lifetime of the game objects so that they are never destroyed
     obstaclesgroup.setLifetimeEach(-1);
     cloudgroup.setLifetimeEach(-1);
-    
-    
-  
+     
   
  
   }  
